@@ -1,0 +1,26 @@
+@font-face {
+    font-family: ReemKufi;
+    src: url('../images/fonts/ReemKufi-Regular.ttf');
+}
+
+g {
+    cursor: pointer;
+}
+
+.Circle {
+    fill: #EEEEEE;
+    cursor: pointer;
+}
+
+.table {
+    fill: #EEEEEE;
+    stroke: #999999;
+    stroke-linejoin: round;
+    stroke-width: 2px;
+}
+
+.table_name {
+    font-family: ReemKufi;
+    fill: #999999;
+    font-size: 28px;
+}
