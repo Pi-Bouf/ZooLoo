@@ -12,7 +12,7 @@ g {
     cursor: pointer;
 }
 
-.table {
+.table_rect {
     fill: #EEEEEE;
     stroke: #999999;
     stroke-linejoin: round;
@@ -23,4 +23,10 @@ g {
     font-family: ReemKufi;
     fill: #999999;
     font-size: 28px;
+}
+
+.table_field {
+    font-family: ReemKufi;
+    fill: #FF6600;
+    font-size: 16px;
 }

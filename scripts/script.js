@@ -54,10 +54,7 @@ $(document).ready(function() {
             tlOver.reverse();
         } else {
             var person = prompt("Nom de la table:");
-            var x = Math.floor((Math.random() * 1000) + 100);
-            var y = Math.floor((Math.random() * 400) + 100);
-            var newTable = new Table(person, x, y, svg);
-            newTable.makeTable();
+            var newTable = new Table(person, svg);
             tabTable.push(newTable);
         }
     });

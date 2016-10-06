@@ -4,6 +4,8 @@ function Table(name, x, y, svg) {
     this.y = y;
     this.svg = svg;
     this.selected = 0;
+    var tabField = new Array();
+    this.tabField = tabField;
 
     var group = document.createElementNS("http://www.w3.org/2000/svg", "g");
     group.setAttribute("id", "table_" + this.name);
@@ -73,6 +75,19 @@ function Table(name, x, y, svg) {
                 tlOver.play();
             }
         });
+    };
+
+    this.addField = function()
+    {
+        var fieldName = prompt("Quel est le nom du champ ?");
+        tabField.push(fieldName);
+        console.log("ok");
+        var newField = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        newField.setAttribute("class", "table_field field_" + this.fieldName);
+        newField.setAttribute("transform", 'translate(' + (this.x + 60) + ' ' + (this.y + 60) + ')');
+        newField.textContent = fieldName;
+        this.group.appendChild(newField);
+        console.log("ok");
     };
     
     this.destroyTable = function()
