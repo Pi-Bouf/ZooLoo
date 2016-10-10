@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     var tabTable = new Array();
 
@@ -24,48 +24,7 @@ $(document).ready(function() {
         y: 20
     });
 
-    // Animate for left circle (Add/Delete)
-    var tlOver = new TimelineMax();
-    tlOver.to(CLeft, 0.3, {
-        rotation: 45,
-        transformOrigin: "50% 50%",
-    })
-        .to([CR_1, CR_2], 0.3, {
-        stroke: '#E22D50'
-    }, '-=0.3')
-        .pause();
-
-    $(document).on('click', '.table_group', function() {
-        if (checkSelected()) {
-            tlOver.play();
-        } else {
-            tlOver.reverse();
-        }
-    });
-
-    $(CLeft).click(function() {
-        if (checkSelected()) {
-            for (var i = 0; i < tabTable.length; i++) {
-                if (tabTable[i].getState() == "true") {
-                    tabTable[i].destroyTable();
-                    tabTable.splice(i, 1);
-                }
-            }
-            tlOver.reverse();
-        } else {
-            var person = prompt("Nom de la table:");
-            var newTable = new Table(person, svg);
-            tabTable.push(newTable);
-        }
-    });
-
-    function checkSelected() {
-        for (var i = 0; i < tabTable.length; i++) {
-            if (tabTable[i].getState() == "true") {
-                console.log(i);
-                return true;
-            }
-        }
-        return false;
-    }
+    var person = prompt("Nom de la table:");
+    var newTable = new Table(person, svg);
+    tabTable.push(newTable);
 });
